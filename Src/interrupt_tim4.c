@@ -18,8 +18,8 @@ void EXIT_TIM4_init(void){
 	TIM4 ->CNT =0;
 	TIM4 ->CR1 |= CR1_ENR ;
 
-	NVIC_SetPriority(TIM4_IRQn, 1);   // priority 1
-	NVIC_EnableIRQ(TIM4_IRQn);        // enable
+	NVIC_SetPriority(TIM4_IRQn, 1);   
+	NVIC_EnableIRQ(TIM4_IRQn);       
 }
 
 volatile int32_t prev_val = 0;
@@ -27,7 +27,7 @@ volatile float32_t setpoint = 50;
 
 void TIM4_IRQHandler(void){
     if(TIM4->SR & TIM_SR_UIF){
-        TIM4->SR &= ~TIM_SR_UIF;  // CLEAR UIF
+        TIM4->SR &= ~TIM_SR_UIF; 
 
         if(motorRunning){
         int32_t current = TIM2 ->CNT;
@@ -39,12 +39,12 @@ void TIM4_IRQHandler(void){
         float32_t output = PID_compute(error);
 
         if(output >= 0){
-            GPIOB->ODR |=  (1U << 0);    // PB0 HIGH forward
-            GPIOB->ODR &= ~(1U << 1);    // PB1 LOW
+            GPIOB->ODR |=  (1U << 0);    
+            GPIOB->ODR &= ~(1U << 1);   
         } else {
-            GPIOB->ODR &= ~(1U << 0);    // PB0 LOW backward
-            GPIOB->ODR |=  (1U << 1);    // PB1 HIGH
-            output = -output;             // make positive for CCR1
+            GPIOB->ODR &= ~(1U << 0);   
+            GPIOB->ODR |=  (1U << 1);   
+            output = -output;             
         }
         // Clamp output
         if(output > 99.0f) output = 99.0f;
@@ -52,7 +52,7 @@ void TIM4_IRQHandler(void){
         }
 
         else {
-        TIM3->CCR1 = 0;       // motor off
+        TIM3->CCR1 = 0;       
         }
     }
 }
