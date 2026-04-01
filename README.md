@@ -5,7 +5,7 @@ Closed loop DC Motor control using PID in STM32 (Encoder Feedback, CMSIS)
 ## Core idea:
 measure motor speed using an encoder, compare it with a desired value, and adjust the PWM using a PID controller so the motor maintains that speed.
 
-# What it does
+## What it does
 * Uses TIM3 to generate PWM for motor control
 * Uses TIM2 to read encoder signals
 * Uses TIM4 interrupt to run the control loop
