@@ -22,13 +22,6 @@ measure motor speed using an encoder, compare it with a desired value, and adjus
 * Output is converted to PWM duty cycle
 * Motor speed adjusts continuously
 
-## Hardware
-
-* STM32F401 (Nucleo board)
-* JGA25-370 DC Gear Motor
-* Motor driver (L298N)
-* 12V DC Adapter
-
 
 ## Notes
 
