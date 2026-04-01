@@ -19,6 +19,6 @@ void EXTI_INTRPT(void){
 void EXTI15_10_IRQHandler(void){
     if(EXTI->PR & (1 << 13)){
     	motorRunning ^= 1;
-        EXTI->PR |= (1 << 13);  // CLEAR FLAG
+        EXTI->PR |= (1 << 13);  
     }
 }
