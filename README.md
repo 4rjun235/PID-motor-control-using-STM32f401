@@ -25,9 +25,9 @@ measure motor speed using an encoder, compare it with a desired value, and adjus
 ## Hardware
 
 * STM32F401 (Nucleo board)
-* DC motor
+* JGA25-370 DC Gear Motor
 * Motor driver (L298N)
-* Encoder
+* 12V DC Adapter
 
 
 ## Notes
