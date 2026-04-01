@@ -34,11 +34,11 @@ void ENCODER_TIM(void){
 	TIM2 ->SMCR |= TIM2_SMS;
 
     TIM2->CCMR1 &= ~(0xFFFF);
-	TIM2->CCMR1 |= (0x03 << 4);  // IC1F
-	TIM2->CCMR1 |= (0x03 << 12); // IC2F
+	TIM2->CCMR1 |= (0x03 << 4);  
+	TIM2->CCMR1 |= (0x03 << 12); 
 
-    TIM2->CCMR1 |=  TIM2_CCMR_CC1S;         // CC1S = TI1 input
-    TIM2->CCMR1 |=  TIM2_CCMR_CC2S;         // CC2S = TI2 input
+    TIM2->CCMR1 |=  TIM2_CCMR_CC1S;         
+    TIM2->CCMR1 |=  TIM2_CCMR_CC2S;         
 
     TIM2 ->CNT =0;
 	TIM2 ->CR1 |= CR1_ENR;
