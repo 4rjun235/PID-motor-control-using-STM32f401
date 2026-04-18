@@ -48,6 +48,8 @@ Speed drops initially under load, and the controller increases PWM to restore th
 ## Notes
 * CMSIS and DSP files are included inside the project
 * Include paths need to be set in STM32CubeIDE (see chip_header/README.md)
+* For live visualization, a Python script is provided in the `Test/` folder.  
+
 
 
 
