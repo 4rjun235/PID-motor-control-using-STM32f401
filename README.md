@@ -12,7 +12,7 @@ Measure motor speed using an encoder, compare it with a desired value, and adjus
 * Adjusts motor speed using a PID algorithm
 * Start/stop using a button interrupt
 
-## Control System Block Diagram
+## Block Diagram
 <p align="center"> <img src="images/PID_block_diagram.png" width="1000"> </p>
 
 ## How it works
