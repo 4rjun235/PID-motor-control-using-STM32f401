@@ -1,5 +1,5 @@
 ## PID-motor-control-using-STM32f401
-Closed loop DC Motor control using PID in STM32 (Encoder Feedback, CMSIS)
+Closed loop DC Motor control using PID in STM32 
 
 
 ## Core idea:
@@ -10,8 +10,9 @@ measure motor speed using an encoder, compare it with a desired value, and adjus
 * Uses TIM2 to read encoder signals
 * Uses TIM4 interrupt to run the control loop
 * Adjusts motor speed using a PID algorithm
-* Supports forward and reverse direction
 * Start/stop using a button interrupt
+
+## Control System Block Diagram
 
 
 ## How it works
@@ -22,6 +23,12 @@ measure motor speed using an encoder, compare it with a desired value, and adjus
 * Output is converted to PWM duty cycle
 * Motor speed adjusts continuously
 
+## Hardware used
+* STM32F401RET6 - Nucleo board (Cortex M4)
+* DRV8833 Motor Driver
+* TT MOTOR GM25-370CA-22170-10-EN - DC 6V, 550RPM
+* Power supply 5V (used 5V from an Arduino UNO)
+* M-M and M-F jumper wires
 
 ## Notes
 
